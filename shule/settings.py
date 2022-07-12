@@ -37,10 +37,22 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "core",
-    "students",
+    "django.contrib.sites",
+
+    # Authentication
+    "dj_rest_auth",
+    "allauth",
+    "allauth.account",
+    "dj_rest_auth.registration",
+
     # drf
     "rest_framework",
+    "rest_framework.authtoken",
+
+    "accounts",
+    "core",
+    "students",
+    "staff",
 ]
 
 MIDDLEWARE = [
@@ -103,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = "core.CustomUser"
+AUTH_USER_MODEL = "accounts.CustomBaseUser"
 
 
 # Internationalization
@@ -129,3 +141,5 @@ STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+SITE_ID = 1
