@@ -20,4 +20,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('auth/', include('dj_rest_auth.urls')),
     path('staff/', include('staff.urls')),
+    path('students/', include('students.urls')),
 ]
